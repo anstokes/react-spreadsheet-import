@@ -57,6 +57,7 @@ export const UploadFlow = ({ state, onNext, onBack }: Props) => {
     fields,
     rowHook,
     tableHook,
+    downloadFile,
   } = useRsi()
   const [uploadedFile, setUploadedFile] = useState<File | null>(null)
   const toast = useToast()
@@ -78,6 +79,7 @@ export const UploadFlow = ({ state, onNext, onBack }: Props) => {
     case StepType.upload:
       return (
         <UploadStep
+          downloadFile={downloadFile}
           onContinue={async (workbook, file) => {
             setUploadedFile(file)
             const isSingleSheet = workbook.SheetNames.length === 1

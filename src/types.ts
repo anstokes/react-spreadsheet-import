@@ -49,6 +49,8 @@ export type RsiProps<T extends string> = {
   parseRaw?: boolean
   // Use for right-to-left (RTL) support
   rtl?: boolean
+  // Download template / example file
+  downloadFile?: string
 }
 
 export type RawData = Array<string | undefined>
